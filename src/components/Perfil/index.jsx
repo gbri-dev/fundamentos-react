@@ -1,15 +1,11 @@
 import './perfil.css'
 //export default () => {
-const Perfil = () => {
-  const usuario = {
-    nome: 'Gabriel Campos',
-    avatar: 'https://github.com/gbri-dev.png'
-  }
-
-  return (
+// eslint-disable-next-line react/prop-types
+const Perfil = ({endereco, nome }) => {  
+ return (
     <div className='container-perfil'>
-      <img className='perfil-avatar' src={usuario.avatar} alt="foto perfil" />
-      <h3 className='perfil-titulo'>{usuario.nome}</h3>
+      <img className='perfil-avatar' src={endereco} alt="foto perfil" />
+      <h3 className='perfil-titulo'>{nome}</h3>
     </div>
   )
 }
