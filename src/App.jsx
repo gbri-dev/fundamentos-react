@@ -1,12 +1,12 @@
 import Perfil from './components/Perfil'
-import Formulario from './components/Formulario'
+import Repos from './components/ReposList'
 
 function App() {
 
   return (
     <>
     <Perfil endereco="https://github.com/gbri-dev.png" nome='Gbri-dev' />    
-    <Formulario />  
+    <Repos />
     </>
   )
 }
