@@ -1,19 +1,9 @@
-.list {
+.list {}
 
-}
+.list-item {}
 
-.list-item {
+.list-item--name {}
 
-}
+.list-item--language {}
 
-.list-item--name {
-
-}
-
-.list-item--language {
-
-}
-
-.list-item--link {
-    
-}
+.list-item--link {}

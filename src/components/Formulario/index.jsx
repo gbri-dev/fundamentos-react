@@ -18,7 +18,7 @@ const Formulario = () => {
   }
   return(
     <form>
-      <input type="number" placeholder="Máteria A" onChange={evento => setMateriaA(parseInt(evento.target.value))} />
+      <input minLength="0" type="number" placeholder="Máteria A" onChange={evento => setMateriaA(parseInt(evento.target.value))} />
       <input type="number" placeholder="Máteria B" onChange={evento => setMateriaB(parseInt(evento.target.value))} />
       <input type="number" placeholder="Máteria C" onChange={evento => setMateriaC(parseInt(evento.target.value))} />      
       <br />
