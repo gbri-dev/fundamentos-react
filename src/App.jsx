@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-    <Perfil endereco="https://github.com/gbri-dev.png" nome='Gbri-dev' />    
+    <Perfil nomeUsuario='GBRI-DEV' />    
     <Repos />
     </>
   )
