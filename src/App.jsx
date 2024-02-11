@@ -5,12 +5,8 @@ function App() {
 
   return (
     <>
-      <Perfil endereco="https://github.com/gbri-dev.png" nome='Gbri-dev' />
-      <div className='d-flex'>
-        <div className="card">
-          <Repos />
-        </div>
-      </div>
+    <Perfil nomeUsuario='GBRI-DEV' />    
+    <Repos />
     </>
   )
 }
