@@ -17,40 +17,55 @@ const ReposList = ({ nomeUsuario }) => {
     useEffect(() => {
         setEstaCarregando(true)
         fetch(`https://api.github.com/users/${nomeUsuario}/repos`)
-            .then(res => res.json())
+            .then(res => {
+                if (res.status !== 200) {
+                    setEstaCarregando(false)
+                    setErro(true)
+                } else {
+                    return res.json();
+                }
+            })
             .then(resJson => {
                 setTimeout(() => {
                     setEstaCarregando(false)
                     setDeuErro(false)
                     setRepos(resJson)
                 }, 3000)
-            })                        
+            })
+            .catch(error => {
+                setMensagemErro('Usuário não encontrado!')
+                setDeuErro(true)
+            })
     }, [nomeUsuario])
     return (
         <div className="container">
-            {estaCarregando ? (
-                <div className={styles.loading}>
-                    <h1>Carregando...</h1>
-                </div>
-            ) : (
+            {deuErro ? (<MensagemErro mensagem={mensagemErro} />) : (
                 <>
-                    {repos.map(({ id, name, language, html_url }) => (
-                        <div className={styles.card} key={id}>
-                            <div className={styles.itemName}>
-                                <h3>Repositórios - {name}</h3>
+                {estaCarregando ? (
+                    <div className={styles.loading}>
+                        <h1>Carregando...</h1>
+                    </div>
+                ) : (
+                    <>
+                        {repos.map(({ id, name, language, html_url }) => (
+                            <div className={styles.card} key={id}>
+                                <div className={styles.itemName}>
+                                    <h3>Repositórios - {name}</h3>
+                                </div>
+                                <ul className={styles.list}>
+                                    <li className={styles.listItem}>
+                                        <div className={styles.itemLanguage}>
+                                            Linguagem: {language}
+                                        </div>
+                                        <a className={styles.itemLink} target="_blank" href={html_url} rel="noreferrer">Acesse aqui!</a>
+                                    </li>
+                                </ul>
                             </div>
-                            <ul className={styles.list}>
-                                <li className={styles.listItem}>
-                                    <div className={styles.itemLanguage}>
-                                        Linguagem: {language}
-                                    </div>
-                                    <a className={styles.itemLink} target="_blank" href={html_url} rel="noreferrer">Acesse aqui!</a>
-                                </li>
-                            </ul>
-                        </div>
-                    ))}
-                </>
-            )}
+                        ))}
+                    </>
+                )}  
+                </>          
+            )}            
         </div>
     )
 }
