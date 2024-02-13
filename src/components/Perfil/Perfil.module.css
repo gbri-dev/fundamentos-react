@@ -8,10 +8,25 @@
   font-family: sans-serif;
   padding: 25px 0;
   font-size: 40px;
+  font-weight: bolder;
+  transition: 1s;
+}
+
+.titulo:hover{
+  -webkit-text-stroke-width: 2px; /* Largura da borda */
+  -webkit-text-stroke-color: #0a3d62; /* Cor da borda */
+  cursor: pointer;
+  color: white;
 }
 
 .header {
   width: 100%;  
-  margin-top: 120px;
-  text-align: center;  
+  height: 20em;  
+  text-align: center;    
+}
+
+.backgroud_header {
+  height: 120px;
+  background-color: #3c6382;
+  padding-top: 30px;
 }

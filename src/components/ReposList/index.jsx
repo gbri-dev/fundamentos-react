@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
-// import './ReposList.module.css'
+import styles from './ReposList.module.css'
 
 const ReposList = () => {
     const [repos, setRepos] = useState([])
@@ -18,24 +18,28 @@ const ReposList = () => {
     }, [])
 
     return (
-        <>
+        <div className={styles.container}>
             {estaCarregando && (
-                <h1>Carregando...</h1>
+                <div className={styles.loading}>
+                    <h1>Carregando...</h1>
+                </div>
             )}
             {repos.map(({ id, name, language, html_url }) => (
-                <div className="card" key={id}>
-                    <h1>Repositórios - {name}</h1>
-                    <hr />
-                    <ul>
-                        <li>
-                            <b>Linguagem: </b> {language} <br />
-                            <a target="_blank" href={html_url} rel="noreferrer">Acesse aqui.</a>
+                <div className={styles.card} key={id}>
+                    <div className={styles.itemName}>
+                        <h3>Repositórios - {name}</h3>
+                    </div>                    
+                    <ul className={styles.list}>
+                        <li className={styles.listItem}>
+                            <div className={styles.itemLanguage}>                            
+                                Linguagem: {language}
+                            </div>                           
+                            <a className={styles.itemLink} target="_blank" href={html_url} rel="noreferrer">Acesse aqui!</a>                            
                         </li>
-                    </ul>
-                    <hr />
+                    </ul>                    
                 </div>
             ))}
-        </>
+        </div>
     )
 }
 

@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-    <Perfil nomeUsuario='GBRI-DEV' />    
+    <Perfil nomeUsuario='GBRI-DEV' nomePessoa='Gabriel C Silva' />    
     <Repos />
     </>
   )

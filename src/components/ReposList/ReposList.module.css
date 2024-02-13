@@ -1,9 +1,47 @@
-.list {}
+.list {
+    list-style: none;
+}
 
-.list-item {}
+.listItem {
+    text-decoration: none;
+}
 
-.list-item--name {}
+.ItemName {
+    text-align: center;
+}
 
-.list-item--language {}
+.itemLanguage {
+    padding: 3px 0;
+}
 
-.list-item--link {}
+.itemLink {
+    color: #3e6699;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: small;
+    transition: 500ms;
+}
+.itemLink:hover {    
+    color: #c5edfc;
+    -webkit-text-stroke-width: 2px; /* Largura da borda */
+    -webkit-text-stroke-color: #0a3d62; /* Cor da borda */
+    font-size: 2rem;    
+}
+
+.card {        
+    border: 1px solid #3e6699;    
+    border-radius: 9px;
+    padding: 9px;
+    margin: 7px;
+    transition: 1s;
+}
+
+.card:hover {
+    background-color: #3e65996b;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;                   
+}

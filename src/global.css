@@ -2,17 +2,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    background-color: black;
-    color: white;
-}
-
-.d-flex {
-    display: flex !important;
-}
-
-.card {    
-    border-radius: 1px solid #fff;
-    width: 250px;
-    height: 250px;
+    font-family: sans-serif;   
+    color: #0c2461;
 }
